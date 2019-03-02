@@ -35,12 +35,12 @@
     <input type="text" id="url"/> <button id="btn_url" style="width: 90px">Url</button>
 </div>
 
-
+<a href="imageOrc.html">识别图片文字</a>
 
 
 <script>
 
-    // 处理粘贴事件
+    // 处理粘贴事件(上传图片，云存储)
     $("#aaa").on('paste', function(eventObj) {
         // 处理粘贴事件
         var event = eventObj.originalEvent;
@@ -52,10 +52,14 @@
         });
         if(fileList.length <= 0){ return }
         // imgPreview(fileList[0]);
+        //清除之前的结果
+        init()
+
         upload(fileList);
         //阻止默认行为即不让剪贴板内容在div中显示出来
         event.preventDefault();
     });
+
 
     function upload(fileList) {
         for(var i = 0, l = fileList.length; i < l; i++){
@@ -114,6 +118,12 @@
 
     });
 
+
+    function init(){
+        $("#aaa").empty();
+        $("#mk").empty();
+        $("#url").empty();
+    }
 
     //
     // function imgPreview(file) {

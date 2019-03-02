@@ -42,8 +42,6 @@ public class UploadController {
 
         Map<String, MultipartFile> fileMap = multipartRequest.getFileMap();
 
-
-
         for(Map.Entry<String, MultipartFile> entity : fileMap.entrySet()){
             // 获取单个文件
             mf = entity.getValue();
@@ -56,7 +54,6 @@ public class UploadController {
             }
 
         }
-
 
         Map<String, Object> value = new HashMap<String, Object>();
         value.put("success", true);
@@ -74,6 +71,48 @@ public class UploadController {
         }
 
         return value;
+    }
+
+
+    @RequestMapping(value = "/imageOrc", method = RequestMethod.POST)
+    public String imageOrc(HttpServletRequest request, MultipartFile file) throws IOException {
+
+        MultipartFile mf = null;
+        File mff = null;
+        ArrayList<String> arrUrl = new ArrayList<>(); //返回url的集合
+
+        if (!(request instanceof MultipartHttpServletRequest)) {
+            String errorMsg = "your post form is not support ENCTYPE='multipart/form-data' ";
+            System.out.println(errorMsg);
+            throw new RuntimeException(errorMsg);
+        }
+        MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
+
+
+        Map<String, MultipartFile> fileMap = multipartRequest.getFileMap();
+        String imageContent = null;
+        for(Map.Entry<String, MultipartFile> entity : fileMap.entrySet()){
+            // 获取单个文件
+            mf = entity.getValue();
+            imageContent= uploadService.imageOrc(mf);
+        }
+//        Map<String, Object> value = new HashMap<String, Object>();
+//        value.put("success", true);
+//        value.put("errorCode", 0);
+//        value.put("errorMsg", "");
+//        try {
+//            //此处是调用上传服务接口，4是需要更新的userId 测试数据。
+//
+//            value.put("data", imageContent);
+////            value.put("urlMarkDown", "![](" + arrUrl.get(0) + ")");
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//            value.put("success", false);
+//            value.put("errorCode", 200);
+//            value.put("errorMsg", "图片上传失败");
+//        }
+
+        return imageContent;
     }
 
 }
