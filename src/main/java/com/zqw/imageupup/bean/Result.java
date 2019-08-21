@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 
 /**
  * @Classname Result
- * @Description TODO
+ * @Description 通用返回结果
  * @Date 2019/8/21 10:56
  * @Created by zqw
  * @Version 1.0

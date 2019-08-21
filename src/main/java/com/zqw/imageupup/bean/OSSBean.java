@@ -3,6 +3,7 @@ package com.zqw.imageupup.bean;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import org.springframework.stereotype.Component;
 
 /**
  * @Classname OSSBean
@@ -13,6 +14,7 @@ import lombok.Data;
  */
 @Data
 @Builder
+@Component
 public class OSSBean {
     private String endpoint;
     // accessKey
