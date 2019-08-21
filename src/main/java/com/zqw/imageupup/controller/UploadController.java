@@ -1,5 +1,6 @@
-package com.zqw.imageupup.upload;
+package com.zqw.imageupup.controller;
 
+import com.zqw.imageupup.api.UploadService;
 import com.zqw.imageupup.exception.ImgException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;

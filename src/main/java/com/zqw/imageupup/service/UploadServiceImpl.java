@@ -1,5 +1,6 @@
-package com.zqw.imageupup.upload;
+package com.zqw.imageupup.service;
 
+import com.zqw.imageupup.api.UploadService;
 import com.zqw.imageupup.utils.Base64Util;
 import com.zqw.imageupup.utils.HttpUtils;
 import com.zqw.imageupup.exception.ImgException;

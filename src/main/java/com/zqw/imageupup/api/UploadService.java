@@ -1,4 +1,4 @@
-package com.zqw.imageupup.upload;
+package com.zqw.imageupup.api;
 
 import com.zqw.imageupup.exception.ImgException;
 import org.springframework.web.multipart.MultipartFile;
