@@ -1,5 +1,7 @@
 package com.zqw.imageupup.bean;
 
+import com.aliyun.oss.OSS;
+import com.aliyun.oss.OSSClientBuilder;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -14,6 +16,7 @@ import org.springframework.stereotype.Component;
  */
 @Data
 @Builder
+@AllArgsConstructor
 @Component
 public class OSSBean {
     private String endpoint;
@@ -28,5 +31,9 @@ public class OSSBean {
         accessKeyId = "LTAIjVwQrtNqJJVj";
         accessKeySecret = "TNfBeTBDQj52rHunemkEJA6g4AQ82P";
         bucketName = "wendy-image";
+    }
+
+    public OSS getOssClient(){
+        return new OSSClientBuilder().build(endpoint, accessKeyId, accessKeySecret);
     }
 }

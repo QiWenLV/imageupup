@@ -15,7 +15,7 @@ import java.util.List;
  */
 public interface ImageManageService {
 
-    List<ImageListVO> getImageList();
+    ImageListVO getImageList(ImageListVO imageListVO);
 
     ImageDetailVO getImageDetail();
 
