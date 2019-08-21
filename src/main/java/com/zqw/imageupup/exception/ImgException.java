@@ -1,4 +1,4 @@
-package com.zqw.imageupup.utils;
+package com.zqw.imageupup.exception;
 
 public class ImgException extends Exception{
 

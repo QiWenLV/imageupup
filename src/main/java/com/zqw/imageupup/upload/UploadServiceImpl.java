@@ -2,8 +2,8 @@ package com.zqw.imageupup.upload;
 
 import com.zqw.imageupup.utils.Base64Util;
 import com.zqw.imageupup.utils.HttpUtils;
-import com.zqw.imageupup.utils.ImgException;
-import com.zqw.imageupup.utils.OSSClientUtil;
+import com.zqw.imageupup.exception.ImgException;
+import com.zqw.imageupup.handler.OSSClientUtil;
 import org.apache.http.HttpResponse;
 import org.apache.http.util.EntityUtils;
 import org.springframework.beans.factory.annotation.Autowired;

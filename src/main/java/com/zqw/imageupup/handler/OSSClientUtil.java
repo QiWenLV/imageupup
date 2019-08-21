@@ -1,9 +1,9 @@
-package com.zqw.imageupup.utils;
+package com.zqw.imageupup.handler;
 
 import com.aliyun.oss.OSSClient;
-import com.aliyun.oss.model.Callback;
 import com.aliyun.oss.model.ObjectMetadata;
 import com.aliyun.oss.model.PutObjectResult;
+import com.zqw.imageupup.exception.ImgException;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.stereotype.Component;
